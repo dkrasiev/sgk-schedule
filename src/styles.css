@@ -7,4 +7,14 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #eee;
+}
+
+.container {
+  margin: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }

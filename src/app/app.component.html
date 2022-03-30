@@ -1,23 +1,4 @@
-<div style="margin: 15px">
-  <div></div>
-
-  <mat-card style="width: 33%">
-    <mat-form-field>
-      <mat-label> Group Name </mat-label>
-      <input type="text" matInput [(ngModel)]="groupName" style="width: auto" />
-    </mat-form-field>
-    <hr />
-    <mat-calendar [(selected)]="date" style="width: auto"></mat-calendar>
-    <hr />
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="onLoadSchedule()"
-      style="margin: 15px 0; text-align: left"
-    >
-      Click me!
-    </button>
-  </mat-card>
+<div class="content">
+  <app-lessons-load-menu></app-lessons-load-menu>
+  <app-lessons></app-lessons>
 </div>
-
-<app-lessons></app-lessons>

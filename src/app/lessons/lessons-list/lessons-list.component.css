@@ -1,0 +1,29 @@
+.lessons-list {
+  max-width: 750px;
+  margin: auto;
+  align-self: stretch;
+}
+
+.lessons-list h3 {
+  text-align: center;
+  margin: 0;
+}
+
+.lessons-list .mat-card {
+  padding: 30px 15px;
+}
+
+.table {
+  width: 100%;
+  margin: auto;
+}
+
+.table .mat-column-num,
+.table .mat-column-cab {
+  text-align: center;
+}
+
+.table td.mat-cell,
+.table th.mat-header-cell {
+  padding: 0 10px;
+}

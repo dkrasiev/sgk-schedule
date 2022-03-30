@@ -1,14 +1,15 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Lesson } from '../shared/lesson.model';
-import { LessonsService } from './lessons.service';
+import { Lesson } from '../lesson.model';
+import { LessonsService } from '../lessons.service';
 
 @Component({
   selector: 'app-lessons',
-  templateUrl: './lessons.component.html',
+  templateUrl: './lessons-list.component.html',
+  styleUrls: ['./lessons-list.component.css']
 })
-export class LessonsComponent implements OnInit, OnDestroy {
-  @Input() lessons: Lesson[];
+export class LessonsListComponent implements OnInit, OnDestroy {
+  lessons: Lesson[] = [];
 
   lessonsSub: Subscription;
 

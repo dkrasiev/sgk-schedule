@@ -1,0 +1,10 @@
+.lessons-load-menu {
+  align-self: center;
+  max-width: 300px;
+  margin: 15px auto 30px;
+}
+
+.lessons-load-menu .mat-form-field,
+.lessons-load-menu button {
+  width: 100%;
+}
