@@ -20,6 +20,7 @@ export class LessonsLoadMenuComponent implements OnInit {
     const lastGroup = localStorage.getItem('lastGroup');
     if (lastGroup) {
       this.groupName = lastGroup;
+      this.filteredGroupsNames = this._filter(this.groupName);
     }
 
     this.lessonsService
@@ -30,7 +31,7 @@ export class LessonsLoadMenuComponent implements OnInit {
       )
       .subscribe((groups) => {
         this.groups = groups;
-        this.filteredGroupsNames = this.groups.map((group) => group.name);
+        this.filteredGroupsNames = this._filter(this.groupName);
       });
   }
 
