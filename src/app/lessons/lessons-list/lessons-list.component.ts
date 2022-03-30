@@ -6,7 +6,7 @@ import { LessonsService } from '../lessons.service';
 @Component({
   selector: 'app-lessons',
   templateUrl: './lessons-list.component.html',
-  styleUrls: ['./lessons-list.component.css']
+  styleUrls: ['./lessons-list.component.css'],
 })
 export class LessonsListComponent implements OnInit, OnDestroy {
   lessons: Lesson[] = [];

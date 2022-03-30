@@ -1,20 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { Group } from './group.model';
 import { Lesson } from './lesson.model';
 
 @Injectable({ providedIn: 'root' })
 export class LessonsService {
   lessons: Subject<Lesson[]> = new Subject<Lesson[]>();
-  groups: Group[] = [
-    new Group(187, 'ИС-19-04'),
-    new Group(200, 'ИС-20-01'),
-    new Group(201, 'ИС-20-02'),
-    new Group(202, 'ИС-20-03'),
-    new Group(203, 'ИС-20-04'),
-    new Group(204, 'ИС-20-05'),
-  ];
+  groups: Group[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +18,7 @@ export class LessonsService {
       .split('T')[0];
 
     const group = this.groups.find(
-      (group) => group.name == groupName.toUpperCase()
+      (group) => group.name.toLowerCase() == groupName.toLowerCase()
     );
 
     if (group) {
@@ -42,5 +35,11 @@ export class LessonsService {
     } else {
       console.log('Group not found');
     }
+  }
+
+  fetchGroups(): Observable<Group[]> {
+    return this.http
+      .get<Group[]>('http://mfc.samgk.ru/api/groups')
+      .pipe(tap((groups) => (this.groups = groups)));
   }
 }

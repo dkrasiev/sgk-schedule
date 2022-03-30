@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map, take } from 'rxjs';
 import { LessonsService } from 'src/app/lessons/lessons.service';
+import { Group } from '../group.model';
 
 @Component({
   selector: 'app-lessons-load-menu',
@@ -9,17 +11,22 @@ import { LessonsService } from 'src/app/lessons/lessons.service';
 export class LessonsLoadMenuComponent implements OnInit {
   groupName: string = '';
   date: Date = new Date();
-  groupsNames: string[] = [];
+  groups: Group[] = [];
   filteredGroupsNames: string[] = [];
 
   constructor(private lessonsService: LessonsService) {}
 
   ngOnInit(): void {
-    this.groupsNames = this.lessonsService.groups
-      .map((group) => group.name)
-      .sort();
-
-    this.filteredGroupsNames = this.groupsNames;
+    this.lessonsService
+      .fetchGroups()
+      .pipe(
+        take(1),
+        map((groups) => groups.sort())
+      )
+      .subscribe((groups) => {
+        this.groups = groups;
+        this.filteredGroupsNames = this.groups.map((group) => group.name);
+      });
   }
 
   onLoadSchedule() {
@@ -33,8 +40,8 @@ export class LessonsLoadMenuComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.groupsNames.filter((option) =>
-      option.toLowerCase().includes(filterValue)
-    );
+    return this.groups
+      .map((group) => group.name)
+      .filter((option) => option.toLowerCase().includes(filterValue));
   }
 }
