@@ -17,6 +17,11 @@ export class LessonsLoadMenuComponent implements OnInit {
   constructor(private lessonsService: LessonsService) {}
 
   ngOnInit(): void {
+    const lastGroup = localStorage.getItem('lastGroup');
+    if (lastGroup) {
+      this.groupName = lastGroup;
+    }
+
     this.lessonsService
       .fetchGroups()
       .pipe(

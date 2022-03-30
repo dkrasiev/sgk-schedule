@@ -1,6 +1,5 @@
-
 export class Lesson {
-  num: number;
+  num: string;
   title: string;
   teachername: string;
   cab: string;

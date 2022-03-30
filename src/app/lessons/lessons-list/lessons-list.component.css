@@ -9,13 +9,19 @@
   margin: 0;
 }
 
-.lessons-list .mat-card {
-  padding: 30px 15px;
+.lessons-list__info * {
+  margin: 0;
+  padding: 0;
+}
+.lessons-list__info {
+  display: flex;
+  justify-content: space-between;
 }
 
 .table {
   width: 100%;
-  margin: auto;
+  margin: 10px auto;
+  overflow: auto;
 }
 
 .table .mat-column-num,

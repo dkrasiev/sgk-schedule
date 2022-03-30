@@ -1,31 +1,39 @@
 <div class="lessons-load-menu">
   <mat-card>
-    <mat-form-field appearance="outline">
-      <mat-label>Группа</mat-label>
-      <input
-        #groupNameInput
-        type="text"
-        matInput
-        [(ngModel)]="groupName"
-        (ngModelChange)="onGroupNamesChange($event)"
-        [matAutocomplete]="auto"
-      />
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredGroupsNames" [value]="option">
-          {{ option }}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+    <form (submit)="onLoadSchedule()">
+      <mat-form-field appearance="outline">
+        <mat-label>Группа</mat-label>
+        <input
+          type="text"
+          matInput
+          [matAutocomplete]="auto"
+          [(ngModel)]="groupName"
+          name="name"
+          (ngModelChange)="onGroupNamesChange($event)"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let option of filteredGroupsNames"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Дата</mat-label>
-      <input matInput [matDatepicker]="picker" [(ngModel)]="date" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Дата</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="date"
+          name="date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="onLoadSchedule()">
-      Загрузить
-    </button>
+      <button mat-raised-button color="primary" type="submit">Загрузить</button>
+    </form>
   </mat-card>
 </div>

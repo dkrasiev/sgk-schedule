@@ -10,18 +10,32 @@ import { LessonsService } from '../lessons.service';
 })
 export class LessonsListComponent implements OnInit, OnDestroy {
   lessons: Lesson[] = [];
+  date: Date;
 
   lessonsSub: Subscription;
+  dateSub: Subscription;
 
   constructor(private lessonsService: LessonsService) {}
 
   ngOnInit(): void {
-    this.lessonsSub = this.lessonsService.lessons.subscribe((value) => {
-      this.lessons = value;
-    });
+    const schedule = JSON.parse(localStorage.getItem('schedule'));
+    if (schedule && schedule?.date && schedule?.lessons) {
+      this.lessons = schedule.lessons;
+      this.date = schedule.date;
+    }
+
+    console.log(this.date);
+
+    this.lessonsSub = this.lessonsService.lessons.subscribe(
+      (value) => (this.lessons = value)
+    );
+    this.dateSub = this.lessonsService.date.subscribe(
+      (value) => (this.date = value)
+    );
   }
 
   ngOnDestroy(): void {
-    this.lessonsSub.unsubscribe();
+    if (this.lessonsSub) this.lessonsSub.unsubscribe();
+    if (this.dateSub) this.dateSub.unsubscribe();
   }
 }
