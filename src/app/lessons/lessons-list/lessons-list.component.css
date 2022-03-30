@@ -1,7 +1,7 @@
 .lessons-list {
+  min-width: 300px;
   max-width: 750px;
-  margin: auto;
-  align-self: stretch;
+  margin: 0 5px;
 }
 
 .lessons-list h3 {

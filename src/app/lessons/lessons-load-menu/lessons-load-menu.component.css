@@ -1,7 +1,7 @@
 .lessons-load-menu {
-  align-self: center;
   max-width: 300px;
-  margin: 15px auto 30px;
+  margin: 0 5px;
+  margin-bottom: 15px;
 }
 
 .lessons-load-menu .mat-form-field,

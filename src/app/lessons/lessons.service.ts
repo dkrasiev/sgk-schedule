@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { Group } from './group.model';
@@ -39,7 +39,7 @@ export class LessonsService {
 
   fetchGroups(): Observable<Group[]> {
     return this.http
-      .get<Group[]>('http://mfc.samgk.ru/api/groups')
+      .get<Group[]>('https://mfc.samgk.ru/api/groups')
       .pipe(tap((groups) => (this.groups = groups)));
   }
 }
