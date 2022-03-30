@@ -1,7 +1,7 @@
 <div class="lessons-load-menu">
   <mat-card>
     <mat-form-field appearance="outline">
-      <mat-label>Group name</mat-label>
+      <mat-label>Группа</mat-label>
       <input
         #groupNameInput
         type="text"
@@ -18,14 +18,14 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Choose a date</mat-label>
+      <mat-label>Дата</mat-label>
       <input matInput [matDatepicker]="picker" [(ngModel)]="date" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="onLoadSchedule()">
-      Load
+      Загрузить
     </button>
   </mat-card>
 </div>

@@ -8,24 +8,24 @@
       <h3>Расписание</h3>
       <table mat-table [dataSource]="lessons" class="table">
         <ng-container matColumnDef="num">
-          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <th mat-header-cell *matHeaderCellDef>№</th>
           <td mat-cell *matCellDef="let lesson">
             {{ lesson.num }}
           </td>
         </ng-container>
-        
+
         <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <th mat-header-cell *matHeaderCellDef>Предмет</th>
           <td mat-cell *matCellDef="let lesson">{{ lesson.title }}</td>
         </ng-container>
-        
+
         <ng-container matColumnDef="teachername">
-          <th mat-header-cell *matHeaderCellDef>Teacher</th>
+          <th mat-header-cell *matHeaderCellDef>Преподаватель</th>
           <td mat-cell *matCellDef="let lesson">{{ lesson.teachername }}</td>
         </ng-container>
-        
+
         <ng-container matColumnDef="cab">
-          <th mat-header-cell *matHeaderCellDef>Cabinet</th>
+          <th mat-header-cell *matHeaderCellDef>Кабинет</th>
           <td mat-cell *matCellDef="let lesson">{{ lesson.cab }}</td>
         </ng-container>
 
