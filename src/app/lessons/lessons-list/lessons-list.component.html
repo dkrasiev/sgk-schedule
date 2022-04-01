@@ -1,18 +1,19 @@
-<div class="lessons-list">
-  <mat-card>
-    <ng-template #noLessons>
-      <h3>Расписание не найдено</h3>
-    </ng-template>
-
-    <div *ngIf="lessons.length > 0; else noLessons">
+<div class="lessons-list" *ngIf="error || schedule">
+  <mat-card [@in] *ngIf="error">
+    <mat-card-title style="text-align: center">
+      {{ error }}
+    </mat-card-title>
+  </mat-card>
+  <mat-card [@in] *ngIf="schedule && !error">
+    <div>
       <div class="lessons-list__info">
-        <h3>Расписание</h3>
-        <mat-card-subtitle>
-          {{ date | date: "shortDate" }}
+        <mat-card-title>Расписание</mat-card-title>
+        <mat-card-subtitle class="lessons-list__date">
+          {{ schedule.date | date: "shortDate" }}
         </mat-card-subtitle>
       </div>
 
-      <table mat-table [dataSource]="lessons" class="table">
+      <table mat-table [dataSource]="schedule.lessons" class="table">
         <ng-container matColumnDef="num">
           <th mat-header-cell *matHeaderCellDef>№</th>
           <td mat-cell *matCellDef="let lesson">
