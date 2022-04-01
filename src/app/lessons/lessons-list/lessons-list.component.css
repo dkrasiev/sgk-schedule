@@ -1,5 +1,5 @@
 .lessons-list {
-  min-width: 300px;
+  min-width: 600px;
   max-width: 750px;
   margin: 0 5px;
 }
@@ -13,9 +13,17 @@
   margin: 0;
   padding: 0;
 }
+
 .lessons-list__info {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lessons-list__date {
+  position: absolute;
+  right: 0;
 }
 
 .table {
@@ -32,4 +40,11 @@
 .table td.mat-cell,
 .table th.mat-header-cell {
   padding: 0 10px;
+}
+
+@media (max-width: 600px) {
+  .lessons-list {
+    min-width: 300px;
+    margin: 0;
+  }
 }

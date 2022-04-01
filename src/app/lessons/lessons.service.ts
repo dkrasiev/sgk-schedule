@@ -8,6 +8,12 @@ import { Lesson } from './lesson.model';
 export class LessonsService {
   lessons: Subject<Lesson[]> = new Subject<Lesson[]>();
   date: Subject<Date> = new Subject<Date>();
+  schedule: Subject<{ date: Date; lessons: Lesson[] }> = new Subject<{
+    date: Date;
+    lessons: Lesson[];
+  }>();
+  error: Subject<string> = new Subject<string>();
+
   groups: Group[] = [];
 
   constructor(private http: HttpClient) {}
@@ -40,17 +46,26 @@ export class LessonsService {
         .subscribe({
           next: (v) => {
             if (v && v.lessons) {
-              v.date = new Date(localISOTime);
-              localStorage.setItem('lastGroup', group.name);
-              localStorage.setItem('schedule', JSON.stringify(v));
-              this.lessons.next(v.lessons);
-              this.date.next(v.date);
+              if (v.lessons.length > 0) {
+                this.error.next(null);
+
+                v.date = new Date(localISOTime);
+                localStorage.setItem('lastGroup', group.name);
+                localStorage.setItem('schedule', JSON.stringify(v));
+                this.schedule.next(v);
+                this.lessons.next(v.lessons);
+                this.date.next(v.date);
+              } else {
+                this.error.next('Расписания нет');
+              }
+            } else {
+              this.error.next('Расписания нет');
             }
           },
-          error: (e) => console.log(e),
+          error: (e) => this.error.next(e),
         });
     } else {
-      console.log('Group not found');
+      this.error.next('Группа не найдена');
     }
   }
 
