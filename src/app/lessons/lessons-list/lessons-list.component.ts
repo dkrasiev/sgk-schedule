@@ -1,8 +1,9 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { Lesson } from '../lesson.model';
-import { LessonsService } from '../lessons.service';
+import * as fromApp from '../../store/app.reducer';
+import { Schedule } from '../schedule.model';
 
 @Component({
   selector: 'app-lessons',
@@ -11,54 +12,34 @@ import { LessonsService } from '../lessons.service';
   animations: [
     trigger('in', [
       transition('void => *', [style({ opacity: 0 }), animate(300)]),
-      // transition('* => void', [
-      //   style({ position: 'absolute' }),
-      //   animate(0, style({ opacity: 0 })),
-      // ]),
+      transition('* => void', [
+        style({ position: 'absolute' }),
+        animate(0, style({ opacity: 0 })),
+      ]),
     ]),
   ],
 })
 export class LessonsListComponent implements OnInit, OnDestroy {
-  // lessons: Lesson[] = [];
-  // date: Date;
-
-  schedule: { date: Date; lessons: Lesson[] };
+  schedule: Schedule;
   error: string;
 
-  // lessonsSub: Subscription;
-  // dateSub: Subscription;
-  scheduleSub: Subscription;
-  errorSub: Subscription;
+  storeSub: Subscription;
 
-  constructor(private lessonsService: LessonsService) {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
     const schedule = JSON.parse(localStorage.getItem('schedule'));
     if (schedule && schedule?.date && schedule?.lessons) {
       this.schedule = schedule;
-      // this.lessons = schedule.lessons;
-      // this.date = schedule.date;
     }
 
-    // this.lessonsSub = this.lessonsService.lessons.subscribe(
-    //   (value) => (this.lessons = value)
-    // );
-    // this.dateSub = this.lessonsService.date.subscribe(
-    //   (value) => (this.date = value)
-    // );
-
-    this.scheduleSub = this.lessonsService.schedule.subscribe(
-      (schedule) => (this.schedule = schedule)
-    );
-    this.errorSub = this.lessonsService.error.subscribe(
-      (error) => (this.error = error)
-    );
+    this.storeSub = this.store.select('lessons').subscribe((lessonsState) => {
+      this.schedule = lessonsState.loadedSchedule;
+      this.error = lessonsState.errorMessage;
+    });
   }
 
   ngOnDestroy(): void {
-    // if (this.lessonsSub) this.lessonsSub.unsubscribe();
-    // if (this.dateSub) this.dateSub.unsubscribe();
-    if (this.scheduleSub) this.scheduleSub.unsubscribe();
-    if (this.errorSub) this.errorSub.unsubscribe();
+    if (this.storeSub) this.storeSub.unsubscribe();
   }
 }

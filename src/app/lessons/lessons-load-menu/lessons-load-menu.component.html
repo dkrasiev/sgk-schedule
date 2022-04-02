@@ -1,6 +1,6 @@
 <div class="lessons-load-menu">
   <mat-card>
-    <form (submit)="onLoadSchedule()">
+    <form class="lessons-load-menu__form" (submit)="onLoadSchedule()">
       <mat-form-field appearance="outline">
         <mat-label>Группа</mat-label>
         <input
@@ -35,5 +35,11 @@
 
       <button mat-raised-button color="primary" type="submit">Загрузить</button>
     </form>
+    <mat-card-footer>
+      <mat-progress-bar
+        *ngIf="isLoading"
+        mode="indeterminate"
+      ></mat-progress-bar>
+    </mat-card-footer>
   </mat-card>
 </div>

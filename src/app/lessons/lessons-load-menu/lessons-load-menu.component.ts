@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { map, take } from 'rxjs';
-import { LessonsService } from 'src/app/lessons/lessons.service';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../store/app.reducer';
 import { Group } from '../group.model';
+import * as lessonsActions from '../store/lessons.actions';
 
 @Component({
   selector: 'app-lessons-load-menu',
@@ -11,10 +12,12 @@ import { Group } from '../group.model';
 export class LessonsLoadMenuComponent implements OnInit {
   groupName: string = '';
   date: Date = new Date();
+
   groups: Group[] = [];
   filteredGroupsNames: string[] = [];
+  isLoading: boolean = false;
 
-  constructor(private lessonsService: LessonsService) {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
     const lastGroup = localStorage.getItem('lastGroup');
@@ -23,20 +26,18 @@ export class LessonsLoadMenuComponent implements OnInit {
       this.filteredGroupsNames = this._filter(this.groupName);
     }
 
-    this.lessonsService
-      .fetchGroups()
-      .pipe(
-        take(1),
-        map((groups) => groups.sort())
-      )
-      .subscribe((groups) => {
-        this.groups = groups;
-        this.filteredGroupsNames = this._filter(this.groupName);
-      });
+    this.store.select('lessons').subscribe((lessonsState) => {
+      this.groups = lessonsState.groups;
+      this.isLoading = lessonsState.isLoading;
+
+      this.filteredGroupsNames = this._filter(this.groupName);
+    });
   }
 
   onLoadSchedule() {
-    this.lessonsService.fetchLessons(this.groupName, this.date);
+    this.store.dispatch(new lessonsActions.SelectGroupName(this.groupName));
+    this.store.dispatch(new lessonsActions.SelectDate(this.date));
+    this.store.dispatch(new lessonsActions.FetchSchedule());
   }
 
   onGroupNamesChange(e) {

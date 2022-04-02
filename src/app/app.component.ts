@@ -1,5 +1,9 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Schedule } from './lessons/schedule.model';
+import * as LessonsActions from './lessons/store/lessons.actions';
+import * as fromApp from './store/app.reducer';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +20,21 @@ import { Component } from '@angular/core';
     ]),
   ],
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  constructor(private store: Store<fromApp.AppState>) {}
+
+  ngOnInit(): void {
+    this.store.dispatch(new LessonsActions.FetchGroups());
+    const lastGroupName = localStorage.getItem('lastGroup');
+    const lastSchedule: Schedule = JSON.parse(
+      localStorage.getItem('lastSchedule')
+    );
+
+    if (lastGroupName) {
+      this.store.dispatch(new LessonsActions.SelectGroupName(lastGroupName));
+    }
+    if (lastSchedule) {
+      this.store.dispatch(new LessonsActions.SetSchedule(lastSchedule));
+    }
+  }
+}
