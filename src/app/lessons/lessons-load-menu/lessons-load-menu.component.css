@@ -8,3 +8,7 @@
 .lessons-load-menu button {
   width: 100%;
 }
+
+.lessons-load-menu__form {
+  margin-bottom: 10px;
+}
