@@ -10,17 +10,18 @@ import { Schedule } from '../schedule.model';
   templateUrl: './lessons-list.component.html',
   styleUrls: ['./lessons-list.component.css'],
   animations: [
-    trigger('in', [
-      transition('void => *', [style({ opacity: 0 }), animate(300)]),
-      transition('* => void', [
-        style({ position: 'absolute' }),
-        animate(0, style({ opacity: 0 })),
+    trigger('dataChanged', [
+      // state('changed', style({ opacity: 0, transform: 'scale(1.1)' })),
+      transition('* => *', [
+        style({ opacity: 0, transform: 'scale(1.1)' }),
+        animate(100),
       ]),
     ]),
   ],
 })
 export class LessonsListComponent implements OnInit, OnDestroy {
   schedule: Schedule;
+
   error: string;
 
   storeSub: Subscription;
@@ -31,6 +32,7 @@ export class LessonsListComponent implements OnInit, OnDestroy {
     const schedule = JSON.parse(localStorage.getItem('schedule'));
     if (schedule && schedule?.date && schedule?.lessons) {
       this.schedule = schedule;
+      this.error = null;
     }
 
     this.storeSub = this.store.select('lessons').subscribe((lessonsState) => {

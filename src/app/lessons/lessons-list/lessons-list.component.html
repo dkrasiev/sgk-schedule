@@ -1,18 +1,18 @@
-<div class="lessons-list" *ngIf="error || schedule">
-  <mat-card [@in] *ngIf="error">
+<div class="schedule" *ngIf="error || schedule">
+  <!-- <mat-card @fadeInOut *ngIf="error">
     <mat-card-title style="text-align: center">
       {{ error }}
     </mat-card-title>
-  </mat-card>
-  <mat-card [@in] *ngIf="schedule && !error">
-    <div>
-      <div class="lessons-list__info">
-        <mat-card-title>Расписание</mat-card-title>
-        <mat-card-subtitle class="lessons-list__date">
-          {{ schedule.date | date: "shortDate" }}
-        </mat-card-subtitle>
-      </div>
+  </mat-card> -->
+  <mat-card [@dataChanged]="schedule">
+    <div class="schedule__info">
+      <mat-card-title>{{ schedule ? "Расписание" : error }}</mat-card-title>
+      <mat-card-subtitle *ngIf="schedule" class="schedule__date">
+        {{ schedule.date | date: "shortDate" }}
+      </mat-card-subtitle>
+    </div>
 
+    <div *ngIf="schedule">
       <table mat-table [dataSource]="schedule.lessons" class="table">
         <ng-container matColumnDef="num">
           <th mat-header-cell *matHeaderCellDef>№</th>

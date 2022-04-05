@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { fadeInOut100ms } from './animations/fadeInOut.animation';
 import { Schedule } from './lessons/schedule.model';
 import * as LessonsActions from './lessons/store/lessons.actions';
 import * as fromApp from './store/app.reducer';
@@ -10,14 +11,7 @@ import * as fromApp from './store/app.reducer';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-    trigger('in', [
-      transition('void => *', [
-        style({
-          opacity: 0,
-        }),
-        animate(500),
-      ]),
-    ]),
+    fadeInOut100ms
   ],
 })
 export class AppComponent implements OnInit {

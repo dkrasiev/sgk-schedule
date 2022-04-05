@@ -1,3 +1,4 @@
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Group } from '../group.model';
 import { Schedule } from '../schedule.model';
 import * as LessonsActions from './lessons.actions';
@@ -38,7 +39,12 @@ export function LessonsReducer(
         errorMessage: null,
       };
     case LessonsActions.SET_ERROR:
-      return { ...state, isLoading: false, errorMessage: action.payload };
+      return {
+        ...state,
+        loadedSchedule: null,
+        isLoading: false,
+        errorMessage: action.payload,
+      };
     case LessonsActions.SELECT_GROUP_NAME:
       localStorage.setItem('lastGroup', action.payload);
       return { ...state, selectedGroup: action.payload };

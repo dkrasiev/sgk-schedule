@@ -1,27 +1,27 @@
-.lessons-list {
+.schedule {
   min-width: 600px;
   max-width: 750px;
   margin: 0 5px;
 }
 
-.lessons-list h3 {
+.schedule h3 {
   text-align: center;
   margin: 0;
 }
 
-.lessons-list__info * {
+.schedule__info * {
   margin: 0;
   padding: 0;
 }
 
-.lessons-list__info {
+.schedule__info {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.lessons-list__date {
+.schedule__date {
   position: absolute;
   right: 0;
 }
@@ -43,7 +43,7 @@
 }
 
 @media (max-width: 600px) {
-  .lessons-list {
+  .schedule {
     min-width: 300px;
     margin: 0;
   }
