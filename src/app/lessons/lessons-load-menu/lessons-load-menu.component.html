@@ -33,7 +33,14 @@
         <mat-datepicker #picker touchUi></mat-datepicker>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit">Загрузить</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="isLoading"
+      >
+        Загрузить
+      </button>
     </form>
     <mat-card-footer>
       <mat-progress-bar

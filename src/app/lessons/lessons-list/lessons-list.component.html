@@ -8,7 +8,7 @@
     <div class="schedule__info">
       <mat-card-title>{{ schedule ? "Расписание" : error }}</mat-card-title>
       <mat-card-subtitle *ngIf="schedule" class="schedule__date">
-        {{ schedule.date | date: "shortDate" }}
+        {{ schedule.date | date: "longDate":"":"ru" }}
       </mat-card-subtitle>
     </div>
 

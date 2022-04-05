@@ -13,6 +13,10 @@ import { MaterialModule } from './material.module';
 import * as fromApp from './store/app.reducer';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
+registerLocaleData(localeRu);
 
 @NgModule({
   declarations: [AppComponent, LessonsListComponent, LessonsLoadMenuComponent],

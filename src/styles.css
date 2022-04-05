@@ -17,8 +17,7 @@ body {
 .content {
   margin-top: 10px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }

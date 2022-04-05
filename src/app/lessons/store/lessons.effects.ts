@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { map, switchMap, take } from 'rxjs';
+import { catchError, map, of, switchMap, take } from 'rxjs';
 import * as fromApp from '../../store/app.reducer';
 import { Group } from '../group.model';
 import { Schedule } from '../schedule.model';
@@ -27,8 +27,6 @@ export class LessonsEffects {
         return this.getScheduleApi(group, date).pipe(
           take(1),
           map((response) => {
-            console.log(response);
-
             if (response && response.lessons && response.lessons.length > 0) {
               response.date = date;
               response.lessons.map(
@@ -38,6 +36,9 @@ export class LessonsEffects {
             } else {
               return new LessonsActions.SetError('Расписание не найдено');
             }
+          }),
+          catchError((e) => {
+            return of(new LessonsActions.SetError(e.message));
           })
         );
       })
