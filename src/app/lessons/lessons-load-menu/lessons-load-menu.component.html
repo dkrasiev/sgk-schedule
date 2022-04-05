@@ -1,7 +1,7 @@
 <div class="lessons-load-menu">
   <mat-card>
     <form class="lessons-load-menu__form" (submit)="onLoadSchedule()">
-      <mat-form-field appearance="outline">
+      <mat-form-field>
         <mat-label>Группа</mat-label>
         <input
           type="text"
@@ -21,7 +21,7 @@
         </mat-autocomplete>
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field>
         <mat-label>Дата</mat-label>
         <input
           matInput
@@ -30,7 +30,7 @@
           name="date"
         />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker touchUi></mat-datepicker>
       </mat-form-field>
 
       <button mat-raised-button color="primary" type="submit">Загрузить</button>
