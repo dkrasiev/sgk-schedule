@@ -16,15 +16,16 @@
 
 .schedule__info {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
 }
 
-.schedule__date {
+/* .schedule__date {
   position: absolute;
   right: 0;
-}
+} */
 
 .table {
   width: 100%;
