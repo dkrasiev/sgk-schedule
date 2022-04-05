@@ -11,6 +11,8 @@ import { LessonsLoadMenuComponent } from './lessons/lessons-load-menu/lessons-lo
 import { LessonsEffects } from './lessons/store/lessons.effects';
 import { MaterialModule } from './material.module';
 import * as fromApp from './store/app.reducer';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, LessonsListComponent, LessonsLoadMenuComponent],
@@ -22,6 +24,12 @@ import * as fromApp from './store/app.reducer';
     MaterialModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([LessonsEffects]),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
