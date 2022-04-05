@@ -1,5 +1,5 @@
 # sgk-schedule
 
-https://sgkshdedule.web.app/
+https://sgkschedule.web.app/
 
 Показывает расписания для групп Самарского Государственного Колледжа
