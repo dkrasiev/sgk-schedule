@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { catchError, map, of, switchMap, take } from 'rxjs';
+import { catchError, map, of, switchMap, take, tap } from 'rxjs';
 import * as fromApp from '../../store/app.reducer';
 import { Group } from '../group.model';
 import { Schedule } from '../schedule.model';
@@ -18,9 +18,7 @@ export class LessonsEffects {
       }),
       switchMap((lessonsState) => {
         const group = lessonsState.groups.find(
-          (group) =>
-            group.name.toLocaleLowerCase() ==
-            lessonsState.selectedGroup.toLocaleLowerCase()
+          (group) => group.id == lessonsState.selectedGroupId
         );
         const date = lessonsState.selectedDate;
 
@@ -52,12 +50,37 @@ export class LessonsEffects {
         return this.http.get<Group[]>('https://mfc.samgk.ru/api/groups').pipe(
           take(1),
           map((value) => {
-            return new LessonsActions.SetGroups(value);
+            return new LessonsActions.SetGroups(
+              value.sort((a, b) => {
+                if (a.name > b.name) {
+                  return 1;
+                }
+                if (a.name < b.name) {
+                  return -1;
+                }
+                return 0;
+              })
+            );
           })
         );
       })
     );
   });
+
+  loadLastData$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(LessonsActions.LOAD_LAST_DATA),
+        tap(() => {
+          const lastGroupId = +localStorage.getItem('lastGroupId');
+
+          if (lastGroupId)
+            this.store.dispatch(new LessonsActions.SelectGroupId(lastGroupId));
+        })
+      );
+    },
+    { dispatch: false }
+  );
 
   constructor(
     private actions$: Actions,
