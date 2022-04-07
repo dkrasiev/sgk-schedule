@@ -8,7 +8,7 @@ import {
 
 export function fadeInOut(timing: number) {
   return trigger('fadeInOut', [
-    state('void', style({ opacity: 0, transform: 'scale(1.2)' })),
+    state('void', style({ opacity: 0 })),
     transition('void => *', animate(timing)),
   ]);
 }

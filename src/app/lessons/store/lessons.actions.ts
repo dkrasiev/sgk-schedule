@@ -7,7 +7,7 @@ export const FETCH_SCHEDULE = '[Schedule] Fetch Schedule';
 export const SET_ERROR = '[Schedule] Set Error';
 export const FETCH_GROUPS = '[Schedule] Fetch Groups';
 export const SET_GROUPS = '[Schedule] Set Groups';
-export const SELECT_GROUP_NAME = '[Schedule] Select Group Name';
+export const SELECT_GROUP_ID = '[Schedule] Select Group Id';
 export const SELECT_DATE = '[Schedule] Select Date';
 export const LOAD_LAST_DATA = '[Schedule] Load Last Data';
 
@@ -31,9 +31,9 @@ export class SetError implements Action {
   readonly type = SET_ERROR;
   constructor(public payload: string) {}
 }
-export class SelectGroupName implements Action {
-  readonly type = SELECT_GROUP_NAME;
-  constructor(public payload: string) {}
+export class SelectGroupId implements Action {
+  readonly type = SELECT_GROUP_ID;
+  constructor(public payload: number) {}
 }
 export class SelectDate implements Action {
   readonly type = SELECT_DATE;
@@ -41,7 +41,7 @@ export class SelectDate implements Action {
 }
 export class LoadLastData implements Action {
   readonly type = LOAD_LAST_DATA;
-  constructor(public payload: Date) {}
+  constructor() {}
 }
 
 export type ScheduleActions =
@@ -50,6 +50,6 @@ export type ScheduleActions =
   | SetError
   | FetchGroups
   | SetGroups
-  | SelectGroupName
-  | LoadLastData
-  | SelectDate;
+  | SelectGroupId
+  | SelectDate
+  | LoadLastData;

@@ -4,7 +4,7 @@ import { Schedule } from '../schedule.model';
 import * as LessonsActions from './lessons.actions';
 
 export interface State {
-  selectedGroup: string;
+  selectedGroupId: number;
   selectedDate: Date;
   loadedSchedule: Schedule;
   groups: Group[];
@@ -13,7 +13,7 @@ export interface State {
 }
 
 const initialState: State = {
-  selectedGroup: '',
+  selectedGroupId: null,
   selectedDate: new Date(),
   loadedSchedule: null,
   groups: [],
@@ -31,7 +31,6 @@ export function LessonsReducer(
     case LessonsActions.SET_GROUPS:
       return { ...state, groups: action.payload };
     case LessonsActions.SET_SCHEDULE:
-      localStorage.setItem('lastSchedule', JSON.stringify(action.payload));
       return {
         ...state,
         loadedSchedule: action.payload,
@@ -45,9 +44,8 @@ export function LessonsReducer(
         isLoading: false,
         errorMessage: action.payload,
       };
-    case LessonsActions.SELECT_GROUP_NAME:
-      localStorage.setItem('lastGroup', action.payload);
-      return { ...state, selectedGroup: action.payload };
+    case LessonsActions.SELECT_GROUP_ID:
+      return { ...state, selectedGroupId: action.payload };
     case LessonsActions.SELECT_DATE:
       return { ...state, selectedDate: action.payload };
     default:
