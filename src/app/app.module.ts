@@ -15,6 +15,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(localeRu);
 
@@ -23,6 +24,7 @@ registerLocaleData(localeRu);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     MaterialModule,
