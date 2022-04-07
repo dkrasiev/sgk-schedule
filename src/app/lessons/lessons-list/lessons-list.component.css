@@ -1,13 +1,9 @@
-.schedule {
-  margin: 0 5px;
-}
-
 .schedule h3 {
-  text-align: center;
   margin: 0;
 }
 
 .schedule__info * {
+  text-align: center;
   margin: 0;
   padding: 0;
 }
@@ -22,7 +18,6 @@
 .table {
   width: 100%;
   margin: 10px auto;
-  overflow: auto;
 }
 
 .table .mat-column-num,

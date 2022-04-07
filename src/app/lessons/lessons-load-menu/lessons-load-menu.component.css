@@ -1,6 +1,5 @@
 .lessons-load-menu {
-  min-width: 400px;
-  margin: 0 5px;
+  width: 350px;
   margin-bottom: 15px;
 }
 
@@ -13,14 +12,8 @@
   border-radius: 4px;
 }
 
-.mat-calendar-body-label {
-  display: none;
-}
-
 @media (max-width: 500px) {
   .lessons-load-menu {
     width: 100vw;
-    margin: 0;
-    margin-bottom: 15px;
   }
 }
