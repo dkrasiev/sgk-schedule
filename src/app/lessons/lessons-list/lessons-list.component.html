@@ -4,7 +4,7 @@
       {{ error }}
     </mat-card-title>
   </mat-card> -->
-  <mat-card [@dataChanged]="schedule">
+  <mat-card [@dataChanged]="state">
     <div class="schedule__info">
       <mat-card-title>{{ schedule ? "Расписание" : error }}</mat-card-title>
       <mat-card-subtitle *ngIf="schedule" class="schedule__date">
