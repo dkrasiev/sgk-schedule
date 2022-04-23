@@ -1,3 +1,7 @@
+.schedule {
+  margin: auto;
+}
+
 .schedule h3 {
   margin: 0;
 }
@@ -16,7 +20,7 @@
 }
 
 .table {
-  width: 100%;
+  width: 75%;
   margin: 10px auto;
 }
 
@@ -32,7 +36,12 @@
 
 @media (max-width: 500px) {
   .schedule {
-    width: 100vw;
+    width: 100%;
     margin: 0;
+    padding: 0;
+  }
+
+  .table {
+    width: 100%;
   }
 }

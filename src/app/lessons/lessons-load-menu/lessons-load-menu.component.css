@@ -1,19 +1,19 @@
 .lessons-load-menu {
+  display: flex;
+  flex-direction: column;
   width: 350px;
-  margin-bottom: 15px;
+
+  margin: auto;
+  margin-top: 10px;
 }
 
-.lessons-load-menu__content > * {
-  width: 100%;
-}
-
-.lessons-load-menu__date {
+.lessons-load-menu__calendar {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 @media (max-width: 500px) {
   .lessons-load-menu {
-    width: 100vw;
+    width: 100%;
   }
 }

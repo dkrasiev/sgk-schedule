@@ -1,31 +1,28 @@
 <div class="lessons-load-menu">
-  <mat-card>
-    <mat-card-content class="lessons-load-menu__content">
-      <mat-form-field class="lessons-load-menu__group">
-        <mat-label>Группа</mat-label>
-        <mat-select
-          [(value)]="selectedGroupId"
-          (valueChange)="LoadSchedule()"
-          required
-        >
-          <mat-option *ngFor="let group of groups" [value]="group.id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+  <!-- <mat-card>
+    <mat-card-content class="lessons-load-menu__content"> -->
+  <mat-form-field class="lessons-load-menu__group">
+    <mat-label>Группа</mat-label>
+    <mat-select
+      [(value)]="selectedGroupId"
+      (valueChange)="LoadSchedule()"
+      required
+    >
+      <mat-option *ngFor="let group of groups" [value]="group.id">
+        {{ group.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-      <mat-calendar
-        class="lessons-load-menu__date"
-        [(selected)]="selectedDate"
-        (selectedChange)="LoadSchedule()"
-      ></mat-calendar>
-    </mat-card-content>
+  <mat-calendar
+    class="lessons-load-menu__calendar"
+    [(selected)]="selectedDate"
+    (selectedChange)="LoadSchedule()"
+  ></mat-calendar>
+  <!-- </mat-card-content> -->
 
-    <mat-card-footer>
-      <mat-progress-bar
-        *ngIf="isLoading"
-        mode="indeterminate"
-      ></mat-progress-bar>
-    </mat-card-footer>
-  </mat-card>
+  <!-- <mat-card-footer> -->
+  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+  <!-- </mat-card-footer> -->
+  <!-- </mat-card> -->
 </div>
