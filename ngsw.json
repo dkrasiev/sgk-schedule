@@ -1,0 +1,97 @@
+{
+  "configVersion": 1,
+  "timestamp": 1650908532743,
+  "index": "https://dkrasiev.github.io/sgk-schedule/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://dkrasiev.github.io/sgk-schedule/favicon.ico",
+        "https://dkrasiev.github.io/sgk-schedule/index.html",
+        "https://dkrasiev.github.io/sgk-schedule/main.656f721dac0bea26.js",
+        "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest",
+        "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js",
+        "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js",
+        "https://dkrasiev.github.io/sgk-schedule/styles.3bd75dc0f385e869.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-128x128.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-144x144.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-152x152.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-192x192.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-384x384.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-512x512.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png",
+        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "patterns": [
+        "https:\\/\\/mfc\\.samgk\\.ru\\/.*",
+        "https:\\/\\/asu\\.samgk\\.ru\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://dkrasiev.github.io/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
+    "https://dkrasiev.github.io/sgk-schedule/index.html": "d07f576d5a2936eef2edf741cf1a02d8a8cc6166",
+    "https://dkrasiev.github.io/sgk-schedule/main.656f721dac0bea26.js": "bd873cec90e1be3bb16837a0a9bc3c8c1ecf837d",
+    "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest": "e9155c1b81a869c48af85876226e8251e0f248df",
+    "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js": "36ed910b00df6012569f5274cda6959bbcaaa4ae",
+    "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js": "489e57f4321721ae821e1695ac79b5dbe15cb1db",
+    "https://dkrasiev.github.io/sgk-schedule/styles.3bd75dc0f385e869.css": "7481c0f25d1463936a9b436ffefd00569bee5ed1"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
