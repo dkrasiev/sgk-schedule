@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652760386535,
+  "timestamp": 1652760568688,
   "index": "https://dkrasiev.github.io/sgk-schedule/index.html",
   "assetGroups": [
     {
@@ -70,7 +70,7 @@
     "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png": "3d0fe36343c7296a505195c899aec0353a392898",
     "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png": "64c86d48e8f0f52a59c72f9c6da376861e2aad93",
     "https://dkrasiev.github.io/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
-    "https://dkrasiev.github.io/sgk-schedule/index.html": "027a89d85489825b56f092df9bbb63f2ca2d4087",
+    "https://dkrasiev.github.io/sgk-schedule/index.html": "52727cfb616183e6412d4b979acdda6e188a557b",
     "https://dkrasiev.github.io/sgk-schedule/main.656f721dac0bea26.js": "bd873cec90e1be3bb16837a0a9bc3c8c1ecf837d",
     "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest": "12bb13add81c7edf400d69b2cb5b5172bb0c8046",
     "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js": "36ed910b00df6012569f5274cda6959bbcaaa4ae",
