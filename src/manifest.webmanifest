@@ -1,6 +1,6 @@
 {
-  "name": "sgk-schedule",
-  "short_name": "sgk-schedule",
+  "name": "SGK Schedule",
+  "short_name": "Schedule",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

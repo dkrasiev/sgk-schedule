@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { catchError, map, of, switchMap, take, tap } from 'rxjs';
+import { catchError, map, of, switchMap, take } from 'rxjs';
 import * as fromApp from '../../store/app.reducer';
 import { Group } from '../group.model';
 import { Schedule } from '../schedule.model';
@@ -67,20 +67,18 @@ export class LessonsEffects {
     );
   });
 
-  loadLastData$ = createEffect(
-    () => {
-      return this.actions$.pipe(
-        ofType(LessonsActions.LOAD_LAST_DATA),
-        tap(() => {
-          const lastGroupId = +localStorage.getItem('lastGroupId');
+  loadLastData$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(LessonsActions.LOAD_LAST_DATA),
+      map(() => {
+        const lastGroupId = +localStorage.getItem('lastGroupId');
 
-          if (lastGroupId)
-            this.store.dispatch(new LessonsActions.SelectGroupId(lastGroupId));
-        })
-      );
-    },
-    { dispatch: false }
-  );
+        if (lastGroupId) return new LessonsActions.SelectGroupId(lastGroupId);
+        else return null;
+        // this.store.dispatch(new LessonsActions.SelectGroupId(lastGroupId));
+      })
+    );
+  });
 
   constructor(
     private actions$: Actions,
