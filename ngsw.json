@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652761576811,
+  "timestamp": 1652761697438,
   "index": "https://dkrasiev.github.io/sgk-schedule/index.html",
   "assetGroups": [
     {
@@ -49,7 +49,7 @@
         "https:\\/\\/mfc\\.samgk\\.ru\\/.*",
         "https:\\/\\/asu\\.samgk\\.ru\\/.*"
       ],
-      "strategy": "freshness",
+      "strategy": "performance",
       "maxSize": 20,
       "maxAge": 86400000,
       "timeoutMs": 5000,
