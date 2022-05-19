@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - name: Installing modules
-        run: npm i
+        run: npm ci
       
       - name: Deploying
         run: ng deploy
