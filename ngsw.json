@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652761697438,
+  "timestamp": 1652977829298,
   "index": "https://dkrasiev.github.io/sgk-schedule/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://dkrasiev.github.io/sgk-schedule/favicon.ico",
         "https://dkrasiev.github.io/sgk-schedule/index.html",
-        "https://dkrasiev.github.io/sgk-schedule/main.79d7131cba77287b.js",
+        "https://dkrasiev.github.io/sgk-schedule/main.ff56c963876545d8.js",
         "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest",
         "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js",
         "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js",
-        "https://dkrasiev.github.io/sgk-schedule/styles.3bd75dc0f385e869.css"
+        "https://dkrasiev.github.io/sgk-schedule/styles.0f3f89dad5795f64.css"
       ],
       "patterns": []
     },
@@ -70,12 +70,12 @@
     "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png": "3d0fe36343c7296a505195c899aec0353a392898",
     "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png": "64c86d48e8f0f52a59c72f9c6da376861e2aad93",
     "https://dkrasiev.github.io/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
-    "https://dkrasiev.github.io/sgk-schedule/index.html": "70609515c4b0640d94dcae99fbd01a22abe02369",
-    "https://dkrasiev.github.io/sgk-schedule/main.79d7131cba77287b.js": "5b79d1bc100be391a8ca3851b77a941c69fc9a4c",
+    "https://dkrasiev.github.io/sgk-schedule/index.html": "0a48bab809232443ecc0bf3ca807bdf41172c39a",
+    "https://dkrasiev.github.io/sgk-schedule/main.ff56c963876545d8.js": "9edfc5cecc63b8c4a24000346b91f2316a27db7b",
     "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest": "12bb13add81c7edf400d69b2cb5b5172bb0c8046",
     "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js": "36ed910b00df6012569f5274cda6959bbcaaa4ae",
     "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js": "489e57f4321721ae821e1695ac79b5dbe15cb1db",
-    "https://dkrasiev.github.io/sgk-schedule/styles.3bd75dc0f385e869.css": "7481c0f25d1463936a9b436ffefd00569bee5ed1"
+    "https://dkrasiev.github.io/sgk-schedule/styles.0f3f89dad5795f64.css": "cda9c8a07733fc3704cbcfc1c2784e13a29a8aa2"
   },
   "navigationUrls": [
     {
