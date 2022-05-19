@@ -1,0 +1,16 @@
+name: Deploy on github pages
+
+on:
+  push:
+    branches: [ master ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Installing modules
+        run: npm i
+      
+      - name: Deploying
+        run: ng deploy
