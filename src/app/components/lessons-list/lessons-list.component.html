@@ -7,32 +7,23 @@
       </mat-card-subtitle>
     </div>
 
-    <div *ngIf="schedule">
-      <table mat-table [dataSource]="schedule.lessons" class="table">
-        <ng-container matColumnDef="num">
-          <th mat-header-cell *matHeaderCellDef>№</th>
-          <td mat-cell *matCellDef="let lesson">
-            {{ lesson.num.split("\n")[0] }}
-            <br />
-            {{ lesson.num.split("\n")[1] }}
+    <div *ngIf="schedule" style="overflow: auto">
+      <table class="table">
+        <tr *ngFor="let lesson of schedule.lessons" class="table__row">
+          <td>
+            <div>
+              {{ lesson.num.split("\n")[0] }}
+            </div>
+            <div>
+              {{ lesson.num.split("\n")[1] }}
+            </div>
           </td>
-        </ng-container>
-
-        <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef>Предмет</th>
-          <td mat-cell *matCellDef="let lesson">
-            <strong>{{ lesson.title }}</strong>
-            <br />
-            {{ lesson.teachername }}
+          <td>
+            <div style="padding-bottom: 4px">{{ lesson.title }}</div>
+            <div>{{ lesson.teachername }}</div>
           </td>
-        </ng-container>
-
-        <ng-container matColumnDef="cab">
-          <th mat-header-cell *matHeaderCellDef>Кабинет</th>
-          <td mat-cell *matCellDef="let lesson">{{ lesson.cab }}</td>
-        </ng-container>
-
-        <tr mat-row *matRowDef="let row; columns: ['num', 'title', 'cab']"></tr>
+          <td>{{ lesson.cab }}</td>
+        </tr>
       </table>
     </div>
   </div>

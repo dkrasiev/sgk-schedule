@@ -7,7 +7,7 @@ hr {
   width: 100vw;
   margin: 10px auto;
   border: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #eee;
 }
 
 @media (max-width: 500px) {

@@ -22,17 +22,22 @@
 
 .table {
   width: 75%;
-  margin: 10px auto;
+  max-width: 1024px;
+  margin: auto;
+  border-collapse: collapse;
 }
 
-.table .mat-column-num,
-.table .mat-column-cab {
-  text-align: center;
+tr {
+  border-bottom: 1px solid #ddd;
 }
 
-.table td.mat-cell,
-.table th.mat-header-cell {
-  padding: 0 10px;
+tr:last-child {
+  border: none;
+}
+
+tr > td {
+  padding: 8px;
+  margin: auto;
 }
 
 @media (max-width: 500px) {
