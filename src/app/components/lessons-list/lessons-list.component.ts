@@ -1,25 +1,18 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+
+import { jumpIn100ms } from 'src/app/animations/jumpIn.animation';
 import * as fromApp from '../../store/app.reducer';
-import { Schedule } from '../schedule.model';
-import * as LessonsActions from '../store/lessons.actions';
+import { Schedule } from '../../types/schedule.model';
+import * as LessonsActions from 'src/app/store/lessons/lessons.actions';
 
 @Component({
   selector: 'app-lessons',
   templateUrl: './lessons-list.component.html',
   styleUrls: ['./lessons-list.component.css'],
-  animations: [
-    trigger('dataChanged', [
-      // state('changed', style({ opacity: 0, transform: 'scale(1.1)' })),
-      transition('* => *', [
-        style({ opacity: 0, transform: 'scale(1.1)' }),
-        animate(100),
-      ]),
-    ]),
-  ],
+  animations: [jumpIn100ms],
 })
 export class LessonsListComponent implements OnInit, OnDestroy {
   schedule: Schedule;

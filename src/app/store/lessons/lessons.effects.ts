@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { catchError, map, of, switchMap, take } from 'rxjs';
-import * as fromApp from '../../store/app.reducer';
-import { Group } from '../group.model';
-import { Schedule } from '../schedule.model';
+
+import * as fromApp from 'src/app/store/app.reducer';
+import { Group } from 'src/app/types/group.model';
+import { Schedule } from 'src/app/types/schedule.model';
 import * as LessonsActions from './lessons.actions';
 
 @Injectable()

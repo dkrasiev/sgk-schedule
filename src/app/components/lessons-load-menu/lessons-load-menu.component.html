@@ -1,6 +1,4 @@
 <div class="lessons-load-menu">
-  <!-- <mat-card>
-    <mat-card-content class="lessons-load-menu__content"> -->
   <mat-form-field class="lessons-load-menu__group">
     <mat-label>Группа</mat-label>
     <mat-select
@@ -19,10 +17,5 @@
     [(selected)]="selectedDate"
     (selectedChange)="LoadSchedule()"
   ></mat-calendar>
-  <!-- </mat-card-content> -->
-
-  <!-- <mat-card-footer> -->
   <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
-  <!-- </mat-card-footer> -->
-  <!-- </mat-card> -->
 </div>

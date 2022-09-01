@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { GroupsResolver } from './lessons/group.resolver';
+import { GroupsResolver } from './misc/group.resolver';
 
 const routes: Routes = [
   {

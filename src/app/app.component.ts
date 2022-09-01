@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { SwUpdate } from '@angular/service-worker';
 import { Store } from '@ngrx/store';
 import { fadeInOut } from './animations/fadeInOut.animation';
-import * as LessonsActions from './lessons/store/lessons.actions';
+import * as LessonsActions from 'src/app/store/lessons/lessons.actions';
 import * as fromApp from './store/app.reducer';
 
 @Component({

@@ -5,9 +5,9 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { map, Observable, take, tap } from 'rxjs';
-import { Group } from './group.model';
+import { Group } from 'src/app/types/group.model';
 import * as fromApp from '../store/app.reducer';
-import * as LessonsActions from './store/lessons.actions';
+import * as LessonsActions from '../store/lessons/lessons.actions';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 

@@ -1,5 +1,5 @@
 import { ActionReducerMap } from '@ngrx/store';
-import * as fromLessons from '../lessons/store/lessons.reducer';
+import * as fromLessons from 'src/app/store/lessons/lessons.reducer';
 
 export interface AppState {
   lessons: fromLessons.State;

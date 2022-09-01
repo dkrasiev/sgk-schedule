@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
-import { Group } from '../group.model';
-import { Schedule } from '../schedule.model';
+import { Group } from 'src/app/types/group.model';
+import { Schedule } from 'src/app/types/schedule.model';
 
 export const SET_SCHEDULE = '[Schedule] Set Schedule';
 export const FETCH_SCHEDULE = '[Schedule] Fetch Schedule';

@@ -4,7 +4,7 @@
 
 hr {
   height: 0%;
-  width: 80%;
+  width: 100vw;
   margin: 10px auto;
   border: 0;
   border-top: 1px solid #ddd;
@@ -13,9 +13,10 @@ hr {
 @media (max-width: 500px) {
   .content {
     margin: 0;
+    padding: 8px;
   }
 
   hr {
-    border: none;
+    width: 0;
   }
 }

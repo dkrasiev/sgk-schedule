@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
-import { Group } from '../group.model';
-import * as lessonsActions from '../store/lessons.actions';
+import { Group } from 'src/app/types/group.model';
+import * as lessonsActions from 'src/app/store/lessons/lessons.actions';
 
 @Component({
   selector: 'app-lessons-load-menu',
@@ -27,13 +27,13 @@ export class LessonsLoadMenuComponent implements OnInit {
   }
 
   LoadSchedule() {
-    if (this.selectedGroupId && this.selectedDate) {
-      localStorage.setItem('lastGroupId', this.selectedGroupId.toString());
-      this.store.dispatch(
-        new lessonsActions.SelectGroupId(this.selectedGroupId)
-      );
-      this.store.dispatch(new lessonsActions.SelectDate(this.selectedDate));
-      this.store.dispatch(new lessonsActions.FetchSchedule());
+    if (!this.selectedGroupId || !this.selectedDate) {
+      return;
     }
+
+    localStorage.setItem('lastGroupId', this.selectedGroupId.toString());
+    this.store.dispatch(new lessonsActions.SelectGroupId(this.selectedGroupId));
+    this.store.dispatch(new lessonsActions.SelectDate(this.selectedDate));
+    this.store.dispatch(new lessonsActions.FetchSchedule());
   }
 }
