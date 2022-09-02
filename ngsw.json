@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1652977829298,
-  "index": "https://dkrasiev.github.io/sgk-schedule/index.html",
+  "timestamp": 1662108664029,
+  "index": "/sgk-schedule/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://dkrasiev.github.io/sgk-schedule/favicon.ico",
-        "https://dkrasiev.github.io/sgk-schedule/index.html",
-        "https://dkrasiev.github.io/sgk-schedule/main.ff56c963876545d8.js",
-        "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest",
-        "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js",
-        "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js",
-        "https://dkrasiev.github.io/sgk-schedule/styles.0f3f89dad5795f64.css"
+        "/sgk-schedule/favicon.ico",
+        "/sgk-schedule/index.html",
+        "/sgk-schedule/main.b18f325a673f4d6b.js",
+        "/sgk-schedule/manifest.webmanifest",
+        "/sgk-schedule/polyfills.85dd9f92d8cd684f.js",
+        "/sgk-schedule/runtime.052db3343f54da4a.js",
+        "/sgk-schedule/styles.0f3f89dad5795f64.css"
       ],
       "patterns": []
     },
@@ -29,15 +29,15 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-128x128.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-144x144.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-152x152.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-192x192.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-384x384.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-48x48.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-512x512.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png",
-        "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png"
+        "/sgk-schedule/assets/icons/icon-128x128.png",
+        "/sgk-schedule/assets/icons/icon-144x144.png",
+        "/sgk-schedule/assets/icons/icon-152x152.png",
+        "/sgk-schedule/assets/icons/icon-192x192.png",
+        "/sgk-schedule/assets/icons/icon-384x384.png",
+        "/sgk-schedule/assets/icons/icon-48x48.png",
+        "/sgk-schedule/assets/icons/icon-512x512.png",
+        "/sgk-schedule/assets/icons/icon-72x72.png",
+        "/sgk-schedule/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
@@ -60,22 +60,22 @@
     }
   ],
   "hashTable": {
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-128x128.png": "b2e35b0dcf9abab90792a85ab7e6149418c9e694",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-144x144.png": "7127d34c99fb4744d08221054390ab0568ce7270",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-152x152.png": "7c4ca38e1b7794a0dbb716e3902b7ce45d2035e1",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-192x192.png": "f711585b3acc1a338b010e371c906049f15d8c07",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-384x384.png": "4e6fa71f07b5ca5953f4aa0b196e5d2dc7485d32",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-48x48.png": "55387bdc40840b3c453524fe4f5a469b26e42086",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-512x512.png": "96edc78a6eff750f062a14d63f639a9ac1e7743e",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png": "3d0fe36343c7296a505195c899aec0353a392898",
-    "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png": "64c86d48e8f0f52a59c72f9c6da376861e2aad93",
-    "https://dkrasiev.github.io/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
-    "https://dkrasiev.github.io/sgk-schedule/index.html": "0a48bab809232443ecc0bf3ca807bdf41172c39a",
-    "https://dkrasiev.github.io/sgk-schedule/main.ff56c963876545d8.js": "9edfc5cecc63b8c4a24000346b91f2316a27db7b",
-    "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest": "12bb13add81c7edf400d69b2cb5b5172bb0c8046",
-    "https://dkrasiev.github.io/sgk-schedule/polyfills.64f888be38e09d6a.js": "36ed910b00df6012569f5274cda6959bbcaaa4ae",
-    "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js": "489e57f4321721ae821e1695ac79b5dbe15cb1db",
-    "https://dkrasiev.github.io/sgk-schedule/styles.0f3f89dad5795f64.css": "cda9c8a07733fc3704cbcfc1c2784e13a29a8aa2"
+    "/sgk-schedule/assets/icons/icon-128x128.png": "b2e35b0dcf9abab90792a85ab7e6149418c9e694",
+    "/sgk-schedule/assets/icons/icon-144x144.png": "7127d34c99fb4744d08221054390ab0568ce7270",
+    "/sgk-schedule/assets/icons/icon-152x152.png": "7c4ca38e1b7794a0dbb716e3902b7ce45d2035e1",
+    "/sgk-schedule/assets/icons/icon-192x192.png": "f711585b3acc1a338b010e371c906049f15d8c07",
+    "/sgk-schedule/assets/icons/icon-384x384.png": "4e6fa71f07b5ca5953f4aa0b196e5d2dc7485d32",
+    "/sgk-schedule/assets/icons/icon-48x48.png": "55387bdc40840b3c453524fe4f5a469b26e42086",
+    "/sgk-schedule/assets/icons/icon-512x512.png": "96edc78a6eff750f062a14d63f639a9ac1e7743e",
+    "/sgk-schedule/assets/icons/icon-72x72.png": "3d0fe36343c7296a505195c899aec0353a392898",
+    "/sgk-schedule/assets/icons/icon-96x96.png": "64c86d48e8f0f52a59c72f9c6da376861e2aad93",
+    "/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
+    "/sgk-schedule/index.html": "30a3679cab664496ee3d6edd714ca54f36449c40",
+    "/sgk-schedule/main.b18f325a673f4d6b.js": "1f1ad6006350f4fbadb4f30b56a63061cbaecc44",
+    "/sgk-schedule/manifest.webmanifest": "12bb13add81c7edf400d69b2cb5b5172bb0c8046",
+    "/sgk-schedule/polyfills.85dd9f92d8cd684f.js": "8ae2422452e358dc30f3b12ae28ffd290f7ebd21",
+    "/sgk-schedule/runtime.052db3343f54da4a.js": "489e57f4321721ae821e1695ac79b5dbe15cb1db",
+    "/sgk-schedule/styles.0f3f89dad5795f64.css": "cda9c8a07733fc3704cbcfc1c2784e13a29a8aa2"
   },
   "navigationUrls": [
     {
