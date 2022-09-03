@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1662108664029,
+  "timestamp": 1662205389105,
   "index": "/sgk-schedule/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/sgk-schedule/favicon.ico",
         "/sgk-schedule/index.html",
-        "/sgk-schedule/main.b18f325a673f4d6b.js",
+        "/sgk-schedule/main.abe112ceea8e36c2.js",
         "/sgk-schedule/manifest.webmanifest",
         "/sgk-schedule/polyfills.85dd9f92d8cd684f.js",
         "/sgk-schedule/runtime.052db3343f54da4a.js",
@@ -70,8 +70,8 @@
     "/sgk-schedule/assets/icons/icon-72x72.png": "3d0fe36343c7296a505195c899aec0353a392898",
     "/sgk-schedule/assets/icons/icon-96x96.png": "64c86d48e8f0f52a59c72f9c6da376861e2aad93",
     "/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
-    "/sgk-schedule/index.html": "30a3679cab664496ee3d6edd714ca54f36449c40",
-    "/sgk-schedule/main.b18f325a673f4d6b.js": "1f1ad6006350f4fbadb4f30b56a63061cbaecc44",
+    "/sgk-schedule/index.html": "ecb8bd439089dc6c3236c0891c854bd0c703af55",
+    "/sgk-schedule/main.abe112ceea8e36c2.js": "81e7bda020b1cf9772576fb3a809004a5ad41e33",
     "/sgk-schedule/manifest.webmanifest": "12bb13add81c7edf400d69b2cb5b5172bb0c8046",
     "/sgk-schedule/polyfills.85dd9f92d8cd684f.js": "8ae2422452e358dc30f3b12ae28ffd290f7ebd21",
     "/sgk-schedule/runtime.052db3343f54da4a.js": "489e57f4321721ae821e1695ac79b5dbe15cb1db",
