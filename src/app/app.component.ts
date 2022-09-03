@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { fadeInOut } from './animations/fadeInOut.animation';
 import * as LessonsActions from 'src/app/store/lessons/lessons.actions';
 import * as fromApp from './store/app.reducer';
+import { Group } from './types/group.model';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,9 @@ import * as fromApp from './store/app.reducer';
   animations: [fadeInOut(300)],
 })
 export class AppComponent implements OnInit {
+  groups: Group[] = [];
+  error: string = '';
+
   constructor(
     private store: Store<fromApp.AppState>,
     private swUpdate: SwUpdate,
@@ -21,6 +25,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(new LessonsActions.LoadLastData());
+
+    this.store.select('lessons').subscribe((lessonsState) => {
+      this.groups = lessonsState.groups;
+      this.error = lessonsState.errorMessage;
+    });
 
     this.swUpdate.checkForUpdate().then((updateAvailable) => {
       if (updateAvailable) {

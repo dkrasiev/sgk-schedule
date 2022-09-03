@@ -1,6 +1,8 @@
 <div class="lessons-load-menu">
   <mat-form-field class="lessons-load-menu__group">
-    <mat-label>Группа</mat-label>
+    <mat-label>{{
+      groups.length ? "Выберите группу" : "Загрузка групп..."
+    }}</mat-label>
     <mat-select
       [(value)]="selectedGroupId"
       (valueChange)="LoadSchedule()"
@@ -17,5 +19,4 @@
     [(selected)]="selectedDate"
     (selectedChange)="LoadSchedule()"
   ></mat-calendar>
-  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 </div>

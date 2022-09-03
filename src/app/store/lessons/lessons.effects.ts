@@ -53,16 +53,11 @@ export class LessonsEffects {
           map((value) => {
             return new LessonsActions.SetGroups(
               value.sort((a, b) => {
-                if (a.name > b.name) {
-                  return 1;
-                }
-                if (a.name < b.name) {
-                  return -1;
-                }
-                return 0;
+                return a.name.localeCompare(b.name);
               })
             );
-          })
+          }),
+          catchError((e) => of(new LessonsActions.SetError(e.message)))
         );
       })
     );

@@ -18,6 +18,7 @@ export class LessonsListComponent implements OnInit, OnDestroy {
   schedule: Schedule;
   error: string;
   state: number;
+  isLoading: boolean = false;
 
   storeSub: Subscription;
 
@@ -28,7 +29,7 @@ export class LessonsListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const schedule = JSON.parse(localStorage.getItem('schedule'));
-    if (schedule && schedule?.date && schedule?.lessons) {
+    if (schedule?.date && schedule?.lessons) {
       this.schedule = schedule;
       this.error = null;
     }
@@ -36,6 +37,7 @@ export class LessonsListComponent implements OnInit, OnDestroy {
     this.storeSub = this.store.select('lessons').subscribe((lessonsState) => {
       this.schedule = lessonsState.loadedSchedule;
       this.error = lessonsState.errorMessage;
+      this.isLoading = lessonsState.isLoading;
     });
 
     this.actions$

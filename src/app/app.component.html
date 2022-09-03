@@ -1,5 +1,14 @@
-<div class="content">
-  <app-lessons-load-menu @fadeInOut></app-lessons-load-menu>
-  <hr />
-  <app-lessons @fadeInOut></app-lessons>
+<div class="container">
+  <div>
+    <!-- *ngIf="groups.length; else loading" -->
+    <app-lessons-load-menu @fadeInOut></app-lessons-load-menu>
+    <hr />
+    <app-lessons @fadeInOut></app-lessons>
+  </div>
+  <!-- <ng-template #loading>
+    <div *ngIf="!error" style="text-align: center">Идет загрузка групп...</div>
+    <div>
+      {{ error }}
+    </div>
+  </ng-template> -->
 </div>

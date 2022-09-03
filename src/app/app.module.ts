@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { LessonsListComponent } from './components/lessons-list/lessons-list.component';
 import { LessonsLoadMenuComponent } from './components/lessons-load-menu/lessons-load-menu.component';
 import { LessonsEffects } from 'src/app/store/lessons/lessons.effects';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './shared/material.module';
 import * as fromApp from './store/app.reducer';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';

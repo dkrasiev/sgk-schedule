@@ -21,13 +21,7 @@ export class GroupsResolver implements Resolve<Group[]> {
       take(1),
       map((value) => {
         return value.sort((a, b) => {
-          if (a.name > b.name) {
-            return 1;
-          }
-          if (a.name < b.name) {
-            return -1;
-          }
-          return 0;
+          return a.name.localeCompare(b.name);
         });
       }),
       tap((groups) => {

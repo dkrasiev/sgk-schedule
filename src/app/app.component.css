@@ -1,5 +1,6 @@
 .container {
   margin: 0 auto;
+  padding: 16px;
 }
 
 hr {
@@ -11,7 +12,7 @@ hr {
 }
 
 @media (max-width: 500px) {
-  .content {
+  .container {
     margin: 0;
     padding: 8px;
   }

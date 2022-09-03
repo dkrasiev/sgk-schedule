@@ -11,7 +11,20 @@ import * as lessonsActions from 'src/app/store/lessons/lessons.actions';
 })
 export class LessonsLoadMenuComponent implements OnInit {
   selectedGroupId: number;
-  selectedDate: Date = new Date();
+  selectedDate: Date = (() => {
+    const currentDate = new Date();
+
+    switch (currentDate.getDay()) {
+      case 0:
+        currentDate.setDate(currentDate.getDate() + 1);
+        break;
+      case 6:
+        currentDate.setDate(currentDate.getDate() + 2);
+        break;
+    }
+
+    return currentDate;
+  })();
 
   groups: Group[] = [];
   isLoading: boolean = false;
@@ -24,6 +37,8 @@ export class LessonsLoadMenuComponent implements OnInit {
       this.isLoading = lessonsState.isLoading;
       this.selectedGroupId = lessonsState.selectedGroupId;
     });
+
+    this.store.dispatch(new lessonsActions.SelectDate(this.selectedDate));
   }
 
   LoadSchedule() {
