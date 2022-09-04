@@ -29,7 +29,7 @@ export class LessonsEffects {
             if (response && response.lessons && response.lessons.length > 0) {
               response.date = date;
               response.lessons.map(
-                (lesson) => (lesson.num = this._numToTime(lesson.num))
+                (lesson) => (lesson.time = this._numToTime(lesson.num))
               );
               return new LessonsActions.SetSchedule(response);
             } else {

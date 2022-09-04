@@ -1,6 +1,7 @@
 export class Lesson {
-  num: string;
+  num: number;
   title: string;
   teachername: string;
   cab: string;
+  time?: string;
 }

@@ -11,11 +11,14 @@
       <table class="table">
         <tr *ngFor="let lesson of schedule.lessons" class="table__row">
           <td>
+            <div>{{ lesson.num }}</div>
+          </td>
+          <td>
             <div>
-              {{ lesson.num.split("\n")[0] }}
+              {{ lesson.time.split("\n")[0] }}
             </div>
             <div>
-              {{ lesson.num.split("\n")[1] }}
+              {{ lesson.time.split("\n")[1] }}
             </div>
           </td>
           <td>
