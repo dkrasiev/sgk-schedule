@@ -32,8 +32,8 @@
       "name": "api",
       "urls": ["https://mfc.samgk.ru/**", "https://asu.samgk.ru/**"],
       "cacheConfig": {
-        "strategy": "performance",
-        "maxAge": "24h",
+        "strategy": "freshness",
+        "maxAge": "12h",
         "maxSize": 20,
         "timeout": "5s"
       }
