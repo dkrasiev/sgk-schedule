@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as fromApp from '../../store/app.reducer';
 import { Group } from 'src/app/types/group.model';
 import * as lessonsActions from 'src/app/store/lessons/lessons.actions';
+import * as fromApp from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-lessons-load-menu',
@@ -32,11 +32,13 @@ export class LessonsLoadMenuComponent implements OnInit {
   constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit(): void {
-    this.store.select('lessons').subscribe((lessonsState) => {
-      this.groups = lessonsState.groups;
-      this.isLoading = lessonsState.isLoading;
-      this.selectedGroupId = lessonsState.selectedGroupId;
-    });
+    this.store
+      .select('lessons')
+      .subscribe(({ groups, isLoading, selectedGroupId }) => {
+        this.groups = groups;
+        this.isLoading = isLoading;
+        this.selectedGroupId = selectedGroupId;
+      });
 
     this.store.dispatch(new lessonsActions.SelectDate(this.selectedDate));
   }

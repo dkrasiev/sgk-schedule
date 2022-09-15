@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
+import * as dayjs from 'dayjs';
 import { catchError, map, of, switchMap, take } from 'rxjs';
 
 import * as fromApp from 'src/app/store/app.reducer';
@@ -23,10 +24,10 @@ export class LessonsEffects {
         );
         const date = lessonsState.selectedDate;
 
-        return this.getScheduleApi(group, date).pipe(
+        return this._fetchSchedule(group, date).pipe(
           take(1),
           map((response) => {
-            if (response && response.lessons && response.lessons.length > 0) {
+            if (response?.lessons?.length > 0) {
               response.date = date;
               response.lessons.map(
                 (lesson) => (lesson.time = this._numToTime(lesson.num))
@@ -71,7 +72,6 @@ export class LessonsEffects {
 
         if (lastGroupId) return new LessonsActions.SelectGroupId(lastGroupId);
         else return null;
-        // this.store.dispatch(new LessonsActions.SelectGroupId(lastGroupId));
       })
     );
   });
@@ -82,19 +82,15 @@ export class LessonsEffects {
     private store: Store<fromApp.AppState>
   ) {}
 
-  private getScheduleApi(group: Group, date: Date) {
-    const tzoffset = new Date().getTimezoneOffset() * 60000; //offset in milliseconds
-    const localISOTime = new Date(date.getTime() - tzoffset)
-      .toISOString()
-      .split('T')[0];
+  private _fetchSchedule(group: Group, date: Date) {
+    const formatedDate = dayjs(date).format('YYYY-MM-DD');
 
     return this.http.get<Schedule>(
-      'https://asu.samgk.ru//api/schedule/' + group?.id + '/' + localISOTime
+      'https://asu.samgk.ru//api/schedule/' + group?.id + '/' + formatedDate
     );
   }
 
   private _numToTime(num: number | string): string {
-    num = num.toString();
     const times = {
       '1': ' 08:25\n10:00',
       '2': ' 10:10\n11:45',
