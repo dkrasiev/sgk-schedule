@@ -9,13 +9,11 @@ import {
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   exports: [
     MatDatepickerModule,
     MatCardModule,
-    MatTableModule,
     MatFormFieldModule,
     MatSelectModule,
     MatProgressSpinnerModule,
