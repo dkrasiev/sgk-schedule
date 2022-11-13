@@ -4,9 +4,9 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { jumpIn100ms } from 'src/app/animations/jumpIn.animation';
-import * as fromApp from '../../store/app.reducer';
+import { AppState } from '../../store/app.reducer' ;
 import { Schedule } from '../../types/schedule.model';
-import * as LessonsActions from 'src/app/store/lessons/lessons.actions';
+import { SET_SCHEDULE, SET_ERROR } from 'src/app/store/lessons/lessons.actions';
 
 @Component({
   selector: 'app-lessons',
@@ -23,7 +23,7 @@ export class LessonsListComponent implements OnInit, OnDestroy {
   storeSub: Subscription;
 
   constructor(
-    private store: Store<fromApp.AppState>,
+    private store: Store<AppState>,
     private actions$: Actions
   ) {}
 
@@ -41,7 +41,7 @@ export class LessonsListComponent implements OnInit, OnDestroy {
     });
 
     this.actions$
-      .pipe(ofType(LessonsActions.SET_SCHEDULE, LessonsActions.SET_ERROR))
+      .pipe(ofType(SET_SCHEDULE, SET_ERROR))
       .subscribe(() => {
         this.state = Math.random();
       });

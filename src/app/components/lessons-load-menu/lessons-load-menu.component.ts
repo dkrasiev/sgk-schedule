@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.reducer';
+import {
+  SelectDate,
+  SelectGroupId,
+  FetchSchedule,
+} from 'src/app/store/lessons/lessons.actions';
 import { Group } from 'src/app/types/group.model';
-import * as lessonsActions from 'src/app/store/lessons/lessons.actions';
-import * as fromApp from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-lessons-load-menu',
@@ -29,7 +33,7 @@ export class LessonsLoadMenuComponent implements OnInit {
   groups: Group[] = [];
   isLoading: boolean = false;
 
-  constructor(private store: Store<fromApp.AppState>) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.store
@@ -40,7 +44,7 @@ export class LessonsLoadMenuComponent implements OnInit {
         this.selectedGroupId = selectedGroupId;
       });
 
-    this.store.dispatch(new lessonsActions.SelectDate(this.selectedDate));
+    this.store.dispatch(new SelectDate(this.selectedDate));
   }
 
   LoadSchedule() {
@@ -49,8 +53,8 @@ export class LessonsLoadMenuComponent implements OnInit {
     }
 
     localStorage.setItem('lastGroupId', this.selectedGroupId.toString());
-    this.store.dispatch(new lessonsActions.SelectGroupId(this.selectedGroupId));
-    this.store.dispatch(new lessonsActions.SelectDate(this.selectedDate));
-    this.store.dispatch(new lessonsActions.FetchSchedule());
+    this.store.dispatch(new SelectGroupId(this.selectedGroupId));
+    this.store.dispatch(new SelectDate(this.selectedDate));
+    this.store.dispatch(new FetchSchedule());
   }
 }

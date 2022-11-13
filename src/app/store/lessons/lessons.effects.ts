@@ -5,16 +5,24 @@ import { Store } from '@ngrx/store';
 import * as dayjs from 'dayjs';
 import { catchError, map, of, switchMap, take } from 'rxjs';
 
-import * as fromApp from 'src/app/store/app.reducer';
+import { AppState } from 'src/app/store/app.reducer';
 import { Group } from 'src/app/types/group.model';
 import { Schedule } from 'src/app/types/schedule.model';
-import * as LessonsActions from './lessons.actions';
+import {
+  SetSchedule,
+  SetError,
+  FETCH_SCHEDULE,
+  FETCH_GROUPS,
+  SetGroups,
+  LOAD_LAST_DATA,
+  SelectGroupId,
+} from './lessons.actions';
 
 @Injectable()
 export class LessonsEffects {
   fetchLessons$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(LessonsActions.FETCH_SCHEDULE),
+      ofType(FETCH_SCHEDULE),
       switchMap(() => {
         return this.store.select('lessons').pipe(take(1));
       }),
@@ -32,13 +40,13 @@ export class LessonsEffects {
               response.lessons.map(
                 (lesson) => (lesson.time = this._numToTime(lesson.num))
               );
-              return new LessonsActions.SetSchedule(response);
+              return new SetSchedule(response);
             } else {
-              return new LessonsActions.SetError('Расписание не найдено');
+              return new SetError('Расписание не найдено');
             }
           }),
           catchError((e) => {
-            return of(new LessonsActions.SetError(e.message));
+            return of(new SetError(e.message));
           })
         );
       })
@@ -47,18 +55,18 @@ export class LessonsEffects {
 
   fetchGroups$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(LessonsActions.FETCH_GROUPS),
+      ofType(FETCH_GROUPS),
       switchMap(() => {
         return this.http.get<Group[]>('https://mfc.samgk.ru/api/groups').pipe(
           take(1),
           map((value) => {
-            return new LessonsActions.SetGroups(
+            return new SetGroups(
               value.sort((a, b) => {
                 return a.name.localeCompare(b.name);
               })
             );
           }),
-          catchError((e) => of(new LessonsActions.SetError(e.message)))
+          catchError((e) => of(new SetError(e.message)))
         );
       })
     );
@@ -66,11 +74,11 @@ export class LessonsEffects {
 
   loadLastData$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(LessonsActions.LOAD_LAST_DATA),
+      ofType(LOAD_LAST_DATA),
       map(() => {
         const lastGroupId = +localStorage.getItem('lastGroupId');
 
-        if (lastGroupId) return new LessonsActions.SelectGroupId(lastGroupId);
+        if (lastGroupId) return new SelectGroupId(lastGroupId);
         else return null;
       })
     );
@@ -79,7 +87,7 @@ export class LessonsEffects {
   constructor(
     private actions$: Actions,
     private http: HttpClient,
-    private store: Store<fromApp.AppState>
+    private store: Store<AppState>
   ) {}
 
   private _fetchSchedule(group: Group, date: Date) {

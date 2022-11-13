@@ -1,6 +1,14 @@
 import { Group } from 'src/app/types/group.model';
 import { Schedule } from '../../types/schedule.model';
-import * as LessonsActions from './lessons.actions';
+import {
+  FETCH_SCHEDULE,
+  ScheduleActions,
+  SELECT_DATE,
+  SELECT_GROUP_ID,
+  SET_ERROR,
+  SET_GROUPS,
+  SET_SCHEDULE,
+} from './lessons.actions';
 
 export interface State {
   selectedGroupId: number;
@@ -22,30 +30,30 @@ const initialState: State = {
 
 export function LessonsReducer(
   state: State = initialState,
-  action: LessonsActions.ScheduleActions
+  action: ScheduleActions
 ) {
   switch (action.type) {
-    case LessonsActions.FETCH_SCHEDULE:
+    case FETCH_SCHEDULE:
       return { ...state, isLoading: true };
-    case LessonsActions.SET_GROUPS:
+    case SET_GROUPS:
       return { ...state, groups: action.payload };
-    case LessonsActions.SET_SCHEDULE:
+    case SET_SCHEDULE:
       return {
         ...state,
         loadedSchedule: action.payload,
         isLoading: false,
         errorMessage: null,
       };
-    case LessonsActions.SET_ERROR:
+    case SET_ERROR:
       return {
         ...state,
         loadedSchedule: null,
         isLoading: false,
         errorMessage: action.payload,
       };
-    case LessonsActions.SELECT_GROUP_ID:
+    case SELECT_GROUP_ID:
       return { ...state, selectedGroupId: action.payload };
-    case LessonsActions.SELECT_DATE:
+    case SELECT_DATE:
       return { ...state, selectedDate: action.payload };
     default:
       return state;
