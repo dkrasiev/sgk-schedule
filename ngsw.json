@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1662307893547,
+  "timestamp": 1668341662883,
   "index": "https://dkrasiev.github.io/sgk-schedule/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://dkrasiev.github.io/sgk-schedule/favicon.ico",
         "https://dkrasiev.github.io/sgk-schedule/index.html",
-        "https://dkrasiev.github.io/sgk-schedule/main.06368a8431122e86.js",
+        "https://dkrasiev.github.io/sgk-schedule/main.a3e9fb90bbb34e1d.js",
         "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest",
         "https://dkrasiev.github.io/sgk-schedule/polyfills.85dd9f92d8cd684f.js",
-        "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js",
-        "https://dkrasiev.github.io/sgk-schedule/styles.0f3f89dad5795f64.css"
+        "https://dkrasiev.github.io/sgk-schedule/runtime.9c588f77b748e7f7.js",
+        "https://dkrasiev.github.io/sgk-schedule/styles.6e35829906c73c10.css"
       ],
       "patterns": []
     },
@@ -49,9 +49,9 @@
         "https:\\/\\/mfc\\.samgk\\.ru\\/.*",
         "https:\\/\\/asu\\.samgk\\.ru\\/.*"
       ],
-      "strategy": "performance",
+      "strategy": "freshness",
       "maxSize": 20,
-      "maxAge": 86400000,
+      "maxAge": 43200000,
       "timeoutMs": 5000,
       "cacheQueryOptions": {
         "ignoreVary": true
@@ -70,12 +70,12 @@
     "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-72x72.png": "3d0fe36343c7296a505195c899aec0353a392898",
     "https://dkrasiev.github.io/sgk-schedule/assets/icons/icon-96x96.png": "64c86d48e8f0f52a59c72f9c6da376861e2aad93",
     "https://dkrasiev.github.io/sgk-schedule/favicon.ico": "1bd3fae9c23e5196479d04816bd98743a727a5de",
-    "https://dkrasiev.github.io/sgk-schedule/index.html": "c4ed946ee12c4901e6c157859c031524cc983a75",
-    "https://dkrasiev.github.io/sgk-schedule/main.06368a8431122e86.js": "604bc1079f851e82894643629af5ada8e81bbfb6",
+    "https://dkrasiev.github.io/sgk-schedule/index.html": "60dacc321be8ee333ef14e3a8e03466b4bb61139",
+    "https://dkrasiev.github.io/sgk-schedule/main.a3e9fb90bbb34e1d.js": "e52d599b86b9b00d30a4311a6531c2cf70fb9623",
     "https://dkrasiev.github.io/sgk-schedule/manifest.webmanifest": "12bb13add81c7edf400d69b2cb5b5172bb0c8046",
     "https://dkrasiev.github.io/sgk-schedule/polyfills.85dd9f92d8cd684f.js": "8ae2422452e358dc30f3b12ae28ffd290f7ebd21",
-    "https://dkrasiev.github.io/sgk-schedule/runtime.052db3343f54da4a.js": "489e57f4321721ae821e1695ac79b5dbe15cb1db",
-    "https://dkrasiev.github.io/sgk-schedule/styles.0f3f89dad5795f64.css": "cda9c8a07733fc3704cbcfc1c2784e13a29a8aa2"
+    "https://dkrasiev.github.io/sgk-schedule/runtime.9c588f77b748e7f7.js": "e5fc5123930ae63b83c7ad6eff05f6525a463f4a",
+    "https://dkrasiev.github.io/sgk-schedule/styles.6e35829906c73c10.css": "706000ffcc0bc642fe433b545000ff844f0180ba"
   },
   "navigationUrls": [
     {
